@@ -1,0 +1,219 @@
+.form-page {
+  display: grid;
+  min-height: calc(100vh - 76px);
+  place-items: center;
+  padding: 42px 20px;
+}
+
+.form-page form {
+  width: min(100%, 440px);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: clamp(24px, 5vw, 42px);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.form-page h2 {
+  margin: 0 0 23px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.form-page label {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 13px;
+  color: #4e4e47;
+  font-size: 0.87rem;
+  font-weight: 650;
+}
+
+.form-page input,
+.form-page textarea,
+.product-form input,
+.product-form textarea {
+  width: 100%;
+  border: 1px solid #dedcd5;
+  border-radius: 9px;
+  padding: 13px 14px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 0.94rem;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.form-page input,
+.form-page textarea {
+  margin-bottom: 0;
+}
+
+.form-page input:focus,
+.form-page textarea:focus,
+.product-form input:focus,
+.product-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgb(217 103 68 / 10%);
+  outline: 0;
+}
+
+.form-page textarea,
+.product-form textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+
+.form-page button,
+.product-form button[type="submit"] {
+  min-height: 47px;
+  border: 0;
+  border-radius: 9px;
+  padding: 0 18px;
+  background: var(--ink);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 160ms ease;
+}
+
+.form-page button {
+  width: 100%;
+}
+
+.form-page button:hover:not(:disabled),
+.product-form button[type="submit"]:hover:not(:disabled) {
+  background: var(--accent-dark);
+}
+
+.form-page button:disabled,
+.product-form button[type="submit"]:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.form-page .link-text {
+  margin: 19px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.form-page .link-text a {
+  color: var(--accent-dark);
+  font-weight: 650;
+}
+
+.product-form-page {
+  width: min(100% - 40px, 760px);
+  margin: 58px auto 90px;
+}
+
+.product-form-intro {
+  margin-bottom: 26px;
+}
+
+.product-form-intro h1 {
+  margin: 10px 0 7px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.product-form-intro p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.product-form {
+  display: grid;
+  gap: 19px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: clamp(20px, 5vw, 38px);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.product-form label {
+  display: grid;
+  gap: 8px;
+  color: #4e4e47;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.product-form input,
+.product-form textarea {
+  font-weight: 400;
+}
+
+.product-form .notice {
+  margin: 0;
+  font-weight: 500;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.optional-label {
+  display: inline;
+  margin-left: 3px;
+  color: var(--muted);
+  font-size: 0.77rem;
+  font-weight: 400;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+  margin-top: 5px;
+}
+
+.form-actions button[type="submit"] {
+  min-width: 155px;
+}
+
+.form-cancel {
+  padding: 10px 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.form-cancel:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 560px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .product-form-page {
+    width: min(100% - 28px, 480px);
+    margin-top: 35px;
+  }
+
+  .form-actions {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .form-actions button[type="submit"] {
+    width: 100%;
+  }
+
+  .form-cancel {
+    text-align: center;
+  }
+}
